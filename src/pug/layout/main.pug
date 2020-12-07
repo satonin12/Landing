@@ -10,11 +10,12 @@ html(lang='en')
     block head
 
   body(class=pageClass)
-    .wrapper
-      #app
-        include ../includes/modules/header
-        .content-wrapper
-          block content
-        include ../includes/modules/footer
+    #app
+      include ../includes/modules/header
+      .home-page
+        .content
+          block slide1
+          block slide2
+        block pre-footer
 
     block script

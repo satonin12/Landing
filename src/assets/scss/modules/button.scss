@@ -1,0 +1,41 @@
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  // cursor: pointer;
+}
+.button{
+  // сброс стилей
+  padding: 0;
+  border: none;
+
+  width: 220px;
+  height: 56px;
+  border-radius: 10px;
+  background-color: #5A98D0;
+  color: #fff;
+  text-align: center;
+
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border: solid 1px transparent;
+
+  font-family: Gilroy;
+  font-size: 11pt;
+  line-height: 26px;
+  letter-spacing: 2px;
+  box-shadow: none;
+}
+.button:active {
+  transform: translateX(1px);
+  filter: saturate(150%)
+}
+.button:hover,
+.button:focus {
+  color: #5A98D0;
+  border-color: currentColor;
+  background-color: white;
+}

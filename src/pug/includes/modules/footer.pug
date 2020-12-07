@@ -1,3 +1,22 @@
+-
+  var itemList = [
+    {logo: "../../../assets/img/logo.svg", title: "Afrianska", text1: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.", text2: "+62-812-7313-4321", text3: "hello.afrian@gmail.com", subtext: "A.", subtext1: "T.", subtext2: "E."},
+    {title: "About US", text1: "About", text2: "What We Do", text3: "Project", text4: "How it Work With Us"},
+    {title: "Follow US", text1: "Instagram", text2: "Facebook", text3: "LinkedIn", text4: "YouTube"}
+  ];
+
 footer
-  .container
-    span footer is here
+  .content
+    .footer__block1
+      .block1__group
+        .group__title Intersted to woek with our team?
+        .group__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+      .block1__button
+        +button('button','Lets Talk', 'disabled')
+    hr
+    .footer__block2
+      for item in itemList
+        .block2__group-info
+          +block2GroupInfo(item)
+      .block2__copyright
+        .copyright__text 2019 © Afrianska. All right reserved

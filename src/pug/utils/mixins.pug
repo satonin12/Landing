@@ -1,4 +1,37 @@
-mixin item(title, descr)
-  .item
-    h2.item-title= title
-    p.item-descr= descr
+mixin button(buttonClass, buttonText, disabled)
+  button(class= buttonClass, disabled= disabled)= buttonText
+
+mixin block2GroupInfo(item)
+  .group-info__row
+    if item.logo
+      img(src=item.logo, alt="Logo", width="48px")
+      div.group-info__title= item.title
+    else
+      div.group-info__title--small= item.title
+  if item.subtext
+    .group-info__row(style={margin: '33px 0px 0px 0px'})
+      div.row__text--capital= item.subtext
+      div.row__text(style={height: '48px'})= item.text1
+    .group-info__row
+      div.row__text--capital= item.subtext1
+      div.row__text= item.text2
+    .group-info__row
+      div.row__text--capital= item.subtext2
+      div.row__text= item.text3
+  else
+    .group-info__row
+      div.row__text= item.text1
+    .group-info__row
+      div.row__text= item.text2
+    .group-info__row
+      div.row__text= item.text3
+    .group-info__row
+      div.row__text= item.text4
+
+mixin card(item)
+  img.card__img.card__img--top(src=item.imageUrl, alt="card_photo")
+  .card__body
+    div.card__title= item.title
+    div.card__text= item.text
+    a.card__link(href="#") Learn more
+      img.card__link--arrow(src="../../assets/img/card_button_forward.svg", alt="стрелочка")

@@ -1,23 +1,67 @@
 extends ../layout/main
 
 block variables
-  - var title = 'Webpack + Pug';
+  - var title = '😊 Landing Page';
   - var description = 'Description for Webpack + Pug';
-  - var pageClass = 'index-page';
+  - var pageClass = 'home-page';
+  - var itemList = ['card item1', ' card item2', 'card item3'];
+  -
+    var cardList = [
+      {title: "Build Your Digital Product That Suitable For Your Need", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", imageUrl: "../../assets/img/card_image1.svg"},
+      {title: "Make Your business To Be Better Famous In Internet", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", imageUrl: "../../assets/img/card_image2.svg"},
+      {title: "Bring Technology To Your Comfrotable Home", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", imageUrl: "../../assets/img/card_image3.svg"}
+    ];
 
-block content
-  section
-    .container
-      +item('item title', 'item descr')
-      +item('item title', 'item descr')
-      +item('item title', 'item descr')
-  example-component
+block slide1
+  .home-page__slide1
+    .slide1__left-block
+      h1.left-block__title New Automation Tool for Your Home
+      p.left-block__text
+        | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        | Faucibus tristique vulputate ultrices ut mauris tellus at.
+        | Posuere sollicitudin odio tellus elit.
+      .left-block__button
+        +button('button', 'See Our Project', 'disabled')
+    .slide1__right-block
+      .right-block__image
+        img(src="../../assets/img/illustration.svg", alt="Image")
+    .background
 
+block slide2
+  .home-page__slide2
+    .slide2__wrapper.wrapper-center
+      h2.slide2__title What we do to help our client grow in digital era,
+      each card, index in cardList
+        div(class=itemList[index])
+          +card(card)
 
-block script
-  script(type='text/javascript').
-    const foo = true;
-    let bar = function() {};
-    if (foo) {
-    bar(1 + 5)
-    }
+block pre-footer
+  .pre-footer
+    .content
+      .pre-footer__block1
+        h2.group__title.block1__title Our Beloved Client
+        p.group__text.block1__text
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          | eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          | enim ad minim veniam.
+      .pre-footer__block2
+        table
+          tr
+            td.block2__logo
+              div.block2__text-logo LOGO CLIENT 1
+            td.block2__logo
+              div.block2__text-logo LOGO CLIENT 2
+            td.block2__logo
+              div.block2__text-logo LOGO CLIENT 3
+            td.block2__logo
+              div.block2__text-logo LOGO CLIENT 4
+          tr
+            td.block2__logo
+              div.block2__text-logo LOGO CLIENT 5
+            td.block2__logo
+              div.block2__text-logo LOGO CLIENT 6
+            td.block2__logo
+              div.block2__text-logo LOGO CLIENT 7
+            td.block2__logo
+              div.block2__text-logo More Client
+    include ../includes/modules/footer
